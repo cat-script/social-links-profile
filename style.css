@@ -4,94 +4,88 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  line-height: 1.5;
-  font-size: 14px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: hsl(0, 0%, 8%);
-  color: white;
-}
-
-h1,
-.button-container,
-.location {
-  font-weight: 600;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 42px;
-  margin: 22px;
-  max-width: 385px;
-  background-color: hsl(0, 0%, 12%);
-  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
 }
 
 img {
   display: block;
-  width: 86px;
+}
+
+:root {
+  --ff: "Inter", sans-serif;
+  --fw-n: 400;
+  --fw-m: 600;
+  --fw-b: 700;
+  --accent-color: hsl(75, 94%, 57%);
+  --gray-900: hsl(0, 0%, 8%);
+  --gray-800: hsl(0, 0%, 12%);
+  --gray-700: hsl(0, 0%, 20%);
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff);
+  font-weight: var(--fw-m);
+  background-color: var(--gray-900);
+  color: white;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile {
+  background-color: var(--gray-800);
+  width: min(24rem, 88%);
+  margin: 1.375rem;
+  padding: 2.5rem;
+  border-radius: 0.625rem;
+}
+
+.profile__picture {
+  max-width: 5.375rem;
+  margin: 0 auto;
   border-radius: 50%;
-  margin-bottom: 24px;
 }
 
-h1 {
-  font-size: 25px;
+.profile__fullname {
+  font-size: 1.5625rem;
+  margin: 1.5rem 0 0.25rem;
 }
 
-.location {
+.profile__location {
   color: hsl(75, 94%, 57%);
 }
 
-.bio {
-  font-weight: 400;
+.profile__bio {
+  font-weight: var(--fw-n);
+  margin: 1.5rem 0 1.375rem;
 }
 
-p {
-  margin: 4px 0px 22px;
+.btn {
+  background-color: var(--gray-700);
+  width: 100%;
+  padding: 0.75rem 0;
+  border-radius: 0.5rem;
 }
 
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.btn+.btn {
+  margin-top: 1rem;
 }
 
-.button {
-  font: inherit;
-  background-color: hsl(0, 0%, 20%);
-  border-style: none;
-  padding: 12px 60px;
-  border-radius: 8px;
-  color: white;
-  flex: 1;
+.btn:is(:focus, :hover) {
+  background-color: var(--accent-color);
+  color: var(--gray-800);
+  font-weight: var(--fw-b);
+  cursor: pointer;
 }
 
-.button:hover {
-  font-weight: 700;
-  color: hsl(0, 0%, 20%);
-  background-color: hsl(75, 94%, 57%);
-}
-
-a {
-  text-decoration: none;
-  color: inherit
-}
-
-@media screen and (max-width: 420px) {
-  main {
-    padding: 22px;
+@media screen and (max-width: 26.25rem) {
+  .profile {
+    padding: 1.5rem;
   }
 }
